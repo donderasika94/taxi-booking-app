@@ -6,6 +6,12 @@ import { DriverHomeComponent } from './driver-home.component';
 import { DriverWelcomeComponent } from './driver-welcome.component';
 import { RouterModule } from '@angular/router';
 import { DriverRoutes } from './driver.router';
+import { DriverService } from './driver.service';
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { DriverNotificationComponent } from './driver-notification.component';
+import { DriverReviewsComponent } from './driver-reviews.component';
+import { DriverRidesComponent } from './driver-rides.component';
 
 
 @NgModule({
@@ -13,23 +19,31 @@ import { DriverRoutes } from './driver.router';
         DriverLoginComponent,
         DriverRegistrationComponent,
         DriverHomeComponent,
-        DriverWelcomeComponent
+        DriverWelcomeComponent,
+        DriverNotificationComponent,
+        DriverReviewsComponent,
+        DriverRidesComponent
 
     ],
     imports:[
+        FormsModule,
         BrowserModule,
-        RouterModule.forChild(DriverRoutes)
+        RouterModule.forChild(DriverRoutes),
+        HttpClientModule
     ],
     exports:[
         DriverLoginComponent,
         DriverRegistrationComponent,
         DriverHomeComponent,
         DriverWelcomeComponent,
+        DriverNotificationComponent,
+        DriverReviewsComponent,
+        DriverRidesComponent,
         RouterModule
         
     ],
     providers:[
-
+        DriverService
     ]
 })
 
